@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: proxbox-client
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: proxbox-client
+    spec:
+      containers:
+      - name: proxbox-client
+        image: gabrielgrant/proxbox-client:0.1.2
