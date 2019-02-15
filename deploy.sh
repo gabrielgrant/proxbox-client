@@ -1,6 +1,7 @@
 #! /bin/bash
 
-kubectl create -f kubernetes-manifest.yaml
+kubectl create -f https://raw.githubusercontent.com/gabrielgrant/proxbox-client/master/kubernetes-manifest.yaml
+
 
 #TODO wait until houdini is up
 
