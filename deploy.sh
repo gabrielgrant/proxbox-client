@@ -7,4 +7,4 @@ kubectl create -f https://raw.githubusercontent.com/gabrielgrant/proxbox-client/
 
 
 POD_NAME=`kubectl get pod --output=json | jq -r '.items[] | select(.metadata.name|startswith("proxbox-client")).metadata.name'`  #  -r flag is needed to not get quotes in the output
-kubectl logs $POD_NAME
+kubectl logs $POD_NAME | grep "Access your cluster at"
