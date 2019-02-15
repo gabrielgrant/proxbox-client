@@ -7,4 +7,5 @@ POD_NAME=`kubectl get pod --output=json | jq -r '.items[] | select(.metadata.nam
 # wait until houdini is up
 until timeout 10s kubectl get pod $POD_NAME | grep "Running" ; do sleep 1; done;
 
-kubectl logs $POD_NAME | grep "Access your cluster at"
+# wait until address is logged
+until timeout 10s kubectl logs $POD_NAME | grep "Access your cluster at"; do sleep 1; done;
